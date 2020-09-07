@@ -33,6 +33,10 @@ export function todoReducer(state, action) {
             newTodosArr3.splice(index2, 1, newTodoObj2);
             return {todosArr: newTodosArr3};
         }
+        case 'CLEAR_COMPLETED' :{
+            const newTodosArr = state.todosArr.filter(todo => todo.completed !== true)
+            return {todosArr: newTodosArr};
+        }
         default:
             return state;
     }

@@ -14,15 +14,21 @@ export default function TodosList(props){
                 />
             </div>
             <div>
-                {state.todosArr.map(t => (
-                    <Todo
-                        key = {t.id}
-                        todo = {t}
-                        remove = {() => dispatch({type: "REMOVE", id: t.id })}
-                        toggleComplete = {t.completed === false ? () => dispatch({type: "MARK_COMPLETE", id: t.id}) : () => dispatch({type: "MARK_INCOMPLETE", id: t.id})
-                        }
-                    />
-                ))}
+                {state.todosArr !== [] ?
+                    state.todosArr.map(t => (
+                        <Todo
+                            key = {t.id}
+                            todo = {t}
+                            remove = {() => dispatch({type: "REMOVE", id: t.id })}
+                            toggleComplete = {t.completed === false ? () => dispatch({type: "MARK_COMPLETE", id: t.id}) : () => dispatch({type: "MARK_INCOMPLETE", id: t.id})
+                            }
+                        />
+                    )) :
+                    <div>No todos</div>
+                }
+            </div>
+            <div>
+                <button onClick = {() => dispatch({type: "CLEAR_COMPLETED"})}>Clear Completed Todos</button>
             </div>
         </div>
     )
