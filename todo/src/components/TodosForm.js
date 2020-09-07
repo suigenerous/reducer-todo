@@ -8,7 +8,7 @@ export default function TodosForm(props) {
                 value = {text}
                 onChange = {e => setText(e.target.value)}
             />
-            <button onClick={() => {props.add(text); setText("")}}>Add Todo</button>
+            <button onClick={() => {props.add(text); setText("")}}>Add To-do</button>
 
         </div>
     );

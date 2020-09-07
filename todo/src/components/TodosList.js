@@ -14,7 +14,7 @@ export default function TodosList(props){
                 />
             </div>
             <div>
-                {state.todosArr !== [] ?
+                {state.todosArr.length !== 0 ?
                     state.todosArr.map(t => (
                         <Todo
                             key = {t.id}
@@ -24,11 +24,11 @@ export default function TodosList(props){
                             }
                         />
                     )) :
-                    <div>No todos</div>
+                    <div>No to-dos</div>
                 }
             </div>
             <div>
-                <button onClick = {() => dispatch({type: "CLEAR_COMPLETED"})}>Clear Completed Todos</button>
+                <button onClick = {() => dispatch({type: "CLEAR_COMPLETED"})}>Clear Completed To-dos</button>
             </div>
         </div>
     )

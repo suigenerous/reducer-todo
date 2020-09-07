@@ -48,19 +48,19 @@ export const initialState = {
         [
 
             {
-                item: 'todo 1',
+                item: 'to-do 1',
                 completed: false,
                 id: 3892987189
             },
 
             {
-                item: 'todo 2',
+                item: 'to-do 2',
                 completed: false,
                 id: 3872987589
             },
 
             {
-                item: 'todo 3',
+                item: 'to-do 3',
                 completed: false,
                 id: 3892937589
             }
